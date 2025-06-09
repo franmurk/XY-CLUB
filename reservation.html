@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervacija - XY Club</title>
+    <meta name="description" content="Rezervirajte svoj stol u XY Club-u. Brzo, jednostavno i sigurno rezerviranje online.">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>XY CLUB</h1>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Početna</a>
+                <a href="events.html" class="nav-link">Eventi</a>
+                <a href="reservation.html" class="nav-link active">Rezervacija</a>
+                <a href="gallery.html" class="nav-link">Galerija</a>
+                <a href="contact.html" class="nav-link">Kontakt</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reservation Header -->
+    <section class="reservation-header">
+        <div class="container">
+            <h1>Rezervacija</h1>
+            <div id="welcomeMessage" class="welcome-message"></div>
+        </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <section class="reservation-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Rezervirajte svoj stol</h2>
+                <form id="reservationForm" class="reservation-form">
+                    <div class="form-group">
+                        <label for="name">Ime i prezime *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Broj telefona *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email adresa *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="people">Broj osoba</label>
+                        <input type="number" id="people" name="people" min="1" max="20" value="2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Datum rezervacije</label>
+                        <input type="date" id="date" name="date" required value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Vrijeme dolaska</label>
+                        <select id="time" name="time">
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
+                            <option value="23:00">22:30</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tableType">Tip stola</label>
+                        <select id="tableType" name="tableType">
+                            <option value="standard">Standardni</option>
+                            <option value="vip">VIP</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Pošaljite rezervaciju</button>
+                </form>
+            </div>
+
+            <!-- Club Capacity Calculator -->
+            <div class="calculator-container">
+                <h2>Kalkulator popunjenosti kluba</h2>
+                <div class="calculator">
+                    <div class="calc-display">
+                        <input type="text" id="calcDisplay" readonly value="0">
+                    </div>
+                    <div class="calc-buttons">
+                        <button onclick="clearCalc()" class="calc-btn clear">C</button>
+                        <button onclick="appendToCalc('/')" class="calc-btn operator">÷</button>
+                        <button onclick="appendToCalc('*')" class="calc-btn operator">×</button>
+                        <button onclick="deleteLast()" class="calc-btn">←</button>
+                        
+                        <button onclick="appendToCalc('7')" class="calc-btn">7</button>
+                        <button onclick="appendToCalc('8')" class="calc-btn">8</button>
+                        <button onclick="appendToCalc('9')" class="calc-btn">9</button>
+                        <button onclick="appendToCalc('-')" class="calc-btn operator">-</button>
+                        
+                        <button onclick="appendToCalc('4')" class="calc-btn">4</button>
+                        <button onclick="appendToCalc('5')" class="calc-btn">5</button>
+                        <button onclick="appendToCalc('6')" class="calc-btn">6</button>
+                        <button onclick="appendToCalc('+')" class="calc-btn operator">+</button>
+                        
+                        <button onclick="appendToCalc('1')" class="calc-btn">1</button>
+                        <button onclick="appendToCalc('2')" class="calc-btn">2</button>
+                        <button onclick="appendToCalc('3')" class="calc-btn">3</button>
+                        <button onclick="calculate()" class="calc-btn equals" rowspan="2">=</button>
+                        
+                        <button onclick="appendToCalc('0')" class="calc-btn zero">0</button>
+                        <button onclick="appendToCalc('.')" class="calc-btn">.</button>
+                    </div>
+                    <div class="capacity-info">
+                        <p>Maksimalna popunjenost: 500 osoba</p>
+                        <p id="capacityStatus">Trenutna popunjenost: 0%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>XY CLUB</h3>
+                    <p>Najbolji provod u gradu</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-phone"></i> +385 1 234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@xyclub.hr</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Pratite nas</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/paladin_caffe/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/paladin_caffe/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/paladin_caffe/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 XY Club. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

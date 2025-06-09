@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija - XY Club</title>
+    <meta name="description" content="Pogledajte galeriju slika iz XY Club-a. Najbolji trenuci, atmosfera i zabava.">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>XY CLUB</h1>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Početna</a>
+                <a href="events.html" class="nav-link">Eventi</a>
+                <a href="reservation.html" class="nav-link">Rezervacija</a>
+                <a href="gallery.html" class="nav-link active">Galerija</a>
+                <a href="contact.html" class="nav-link">Kontakt</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <h1>Galerija</h1>
+            <p>Uhvatili smo najbolje trenutke iz naših nezaboravnih večeri</p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openFullscreen(0)">
+                    <img src="images/party1.jpeg" alt="dance floor">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openFullscreen(1)">
+                    <img src="images/party2.jpg" alt="Club Atmosphere">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openFullscreen(2)">
+                    <img src="images/party3.jpeg" alt="Night Vibes">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openFullscreen(3)">
+                    <img src="images/party4.jpg" alt="White Party">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openFullscreen(4)">
+                    <img src="images/party5.jpg" alt="VIP Area">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Modal -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+            <button class="nav-btn prev-btn" onclick="prevImage()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img id="fullscreenImage" src="" alt="">
+            <button class="nav-btn next-btn" onclick="nextImage()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="image-counter">
+                <span id="imageCounter">1 / 5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>XY CLUB</h3>
+                    <p>Najbolji provod u gradu</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-phone"></i> +385 1 234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@xyclub.hr</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Pratite nas</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/paladin_caffe/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/paladin_caffe/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/paladin_caffe/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 XY Club. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
