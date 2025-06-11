@@ -277,7 +277,6 @@ function filterEvents() {
 
 // Calculator Functions
 function initializeCalculator() {
-    updateCapacityStatus();
 }
 
 function appendToCalc(value) {
@@ -293,13 +292,10 @@ function appendToCalc(value) {
     } else {
         display.value += value;
     }
-    
-    updateCapacityStatus();
 }
 
 function clearCalc() {
     document.getElementById('calcDisplay').value = '0';
-    updateCapacityStatus();
 }
 
 function deleteLast() {
@@ -309,7 +305,6 @@ function deleteLast() {
     } else {
         display.value = '0';
     }
-    updateCapacityStatus();
 }
 
 function calculate() {
@@ -331,29 +326,6 @@ function calculate() {
     }
     
     shouldResetDisplay = true;
-    updateCapacityStatus();
-}
-
-function updateCapacityStatus() {
-    const display = document.getElementById('calcDisplay');
-    const statusElement = document.getElementById('capacityStatus');
-    
-    if (display && statusElement) {
-        const currentValue = parseFloat(display.value) || 0;
-        const maxCapacity = 500;
-        const percentage = Math.min((currentValue / maxCapacity) * 100, 100);
-        
-        statusElement.textContent = `Trenutna popunjenost: ${percentage.toFixed(1)}%`;
-        
-        // Change color based on capacity
-        if (percentage < 50) {
-            statusElement.style.color = '#4ecdc4';
-        } else if (percentage < 80) {
-            statusElement.style.color = '#ffa500';
-        } else {
-            statusElement.style.color = '#ff6b6b';
-        }
-    }
 }
 
 // Gallery Functions

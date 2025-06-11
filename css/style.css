@@ -597,15 +597,6 @@ th {
     background: linear-gradient(45deg, #ff6b6b, #f5576c);
 }
 
-.capacity-info {
-    text-align: center;
-    color: #4ecdc4;
-}
-
-.capacity-info p {
-    margin-bottom: 0.5rem;
-}
-
 /* Gallery Styles */
 .gallery-section {
     padding: 3rem 0;
