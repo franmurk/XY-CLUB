@@ -30,5 +30,5 @@ Projekt je napravljen prema unaprijed definiranim tehničkim zahtjevima, koji su
 - Font Awesome ikone
 - localStorage
 
-Projekt radi lokalno bez potrebe za backendom.
+## Projekt radi lokalno bez potrebe za backendom.
 
